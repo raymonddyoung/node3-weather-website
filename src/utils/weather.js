@@ -11,9 +11,10 @@ const weather  = (latitude, longitude, callback) => {
             callback('Unable to find weather for specified location. ', undefined)
         }
         else{
-
+            //console.log(body.daily.data[0])
             callback(undefined, 
-                body.daily.data[0].summary + '. It is currently ' + body.currently.temperature + ' degrees Celsius')
+                body.daily.data[0].summary + '. It is currently ' + body.currently.temperature + ' degrees Celsius. High Temperature is at ' + body.daily.data[0].temperatureHigh + ' Celsius . Low temperature is at ' + body.daily.data[0].temperatureLow + ' Celsius. ')
+
             // console.log(response.body.daily.data[0].summary)
             // console.log("it is currently " + response.body.currently.temperature + ' degrees Celsius ')
             // console.log("there is " + response.body.currently.precipProbability + "% chance of rain")
